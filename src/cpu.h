@@ -18,6 +18,8 @@ private:
   
     void init();
 public:
+    bool drawFlag;
+
     CPU();
     ~CPU();
     uint16_t fetchOpcodeInstruction();

@@ -6,19 +6,20 @@ using namespace std;
 
 CPU::CPU(): memory(65356, 0){}
 CPU::~CPU(){};
-
+//TODO try to found why it didnt want to work with for maybe an runtime problem ?
 void CPU::init(){
     AF = BC = DE = HL = 0;
     PC = 0x0100; 
     SP = 0xfffe;
      fill(begin(gfx), end(gfx), 0);
-     
+
     fill(begin(registers), end(registers), 0);
     fill(begin(key), end(key), 0);
     fill(begin(stack), end(stack), 0);
 
     memory.resize(65536);
     fill(begin(memory),end(memory), 0);
+    delaySound = delayTimer = 0; 
 }
 
 bool CPU::loadRom(const char* filename) {
@@ -56,9 +57,8 @@ bool CPU::loadRom(const char* filename) {
 
 void CPU::emulateCycle(){
    
-    cout<<"opcode after clean up "<<opcode;
+
     executeInstruction();
-    cout<<"opcode after excution "<<opcode;
     if(delayTimer > 0){
         --delayTimer;
     }

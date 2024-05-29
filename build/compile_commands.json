@@ -1,8 +1,0 @@
-[
-{
-  "directory": "F:/projects/gameboy_emulator/build",
-  "command": "D:/MinGW/bin/g++.exe   -g -o CMakeFiles/gameboy.dir/main.cpp.obj -c F:/projects/gameboy_emulator/main.cpp",
-  "file": "F:/projects/gameboy_emulator/main.cpp",
-  "output": "CMakeFiles/gameboy.dir/main.cpp.obj"
-}
-]
